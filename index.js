@@ -1,6 +1,7 @@
 const { Telegraf } = require('telegraf')
+require('dotenv').config()
 
-const bot = new Telegraf('2057283260:AAGhr7QLhID8Dtp9-owkcFS1tr0Jpf5Innw')
+const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
